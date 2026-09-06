@@ -112,10 +112,22 @@ async function LogoutUser(req, res) {
 
 }
 
+async function GetUser(req, res){
+    const user = await userModel.findById(req.user.id);
+    res.status(200).json({
+        message : 'User fetched successfully',
+        user: {
+            id: user._id,
+            username: user.username,
+            email: user.email  
+        }
+    })
+}
 
 
 module.exports = {
     registerUser,
     LoginUser,
-    LogoutUser
+    LogoutUser,
+    GetUser
 }
