@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router'
 
 const Register = () => {
     
+    const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault()
       
@@ -36,7 +37,7 @@ const Register = () => {
 
                 </form>
 
-                <p>Login</p>
+                <p> have an account? <Link to={'/login'}>Login</Link></p>
             </div>
         </main>
     )

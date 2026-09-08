@@ -1,6 +1,9 @@
 import "../auth.form.scss"
+import { useNavigate, Link } from 'react-router'
 
 const Login = () => {
+
+    const navigate = useNavigate()
 
        const handleSubmit = async (e) => {
         e.preventDefault()
@@ -23,7 +26,7 @@ const Login = () => {
                     </div>
                     <button className='button primary-button' >Login</button>
                 </form>
-                <p >Register </p>
+                <p> don't have an account? <Link to={'/register'}>Register</Link> </p>
             </div>
         </main> 
     )
